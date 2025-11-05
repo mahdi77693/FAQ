@@ -1,0 +1,75 @@
+/* -------------------------
+   VARIABLES & RESET
+-------------------------- */
+:root {
+  --primary-color: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --text-color: #555;
+  --font-family: "Courier New", Courier, monospace;
+  --gap: 20px;
+  --transition-speed: 0.4s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
+.FAQ {
+  background-color: var(--primary-color);
+  max-width: 500px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px var(--shadow-color);
+  transition: all var(--transition-speed) ease;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  transition: background var(--transition-speed);
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  color: var(--text-color);
+  padding: 0;
+  transition: max-height var(--transition-speed) ease,
+    padding var(--transition-speed) ease;
+}
+
+.show-answer {
+  max-height: 500px;
+  padding: 10px 0;
+}
+@media (max-width: 500px) {
+  .FAQ {
+    width: 95%;
+    padding: 20px;
+  }
+}
